@@ -39,6 +39,8 @@ Start container
 docker run -d -p 8000:8000  -e ICECAST_PASS=hackme -v </path/to/music/folder>:/tracks:ro easy-radio:latest
 ```
 ## Enjoy
+Wait a few seconds depending on the number of tracks in your music folder
+
 Open your browser at
 ```
 http://localhost:8000/radio
