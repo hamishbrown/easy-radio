@@ -1,4 +1,4 @@
-# docker-radio
+# easy-radio
 Docker image to easily setup an internet radio station using liquidsoap and icecast
 
 - [Liquidsoap 1.4.3](https://www.liquidsoap.info/doc-1.4.3/)
