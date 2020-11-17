@@ -7,7 +7,7 @@ Docker image to easily setup an internet radio station using liquidsoap and icec
 ----------
 Build the image
 ```bash
-docker build -t easy-radio .
+docker build -t hamishbrown/easy-radio .
 ```
 ## Start container
 ### Using **docker-compose**
@@ -16,7 +16,7 @@ Update `docker-compose.xml` with the path to your music folder
 version: "2"
 services:
   radio:
-    image: easy-radio:latest
+    image: hamishbrown/easy-radio:latest
     restart: unless-stopped
     environment: 
       - TZ=Europe/Dublin
@@ -36,7 +36,7 @@ docker-compose up -d
 ### Using **docker**
 Start container
 ```
-docker run -d -p 8000:8000  -e ICECAST_PASS=hackme -v </path/to/music/folder>:/tracks:ro easy-radio:latest
+docker run -d -p 8000:8000  -e ICECAST_PASS=hackme -v </path/to/music/folder>:/tracks:ro hamishbrown/easy-radio:latest
 ```
 ## Enjoy
 Wait a few seconds depending on the number of tracks in your music folder

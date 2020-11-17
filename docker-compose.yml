@@ -1,7 +1,7 @@
 version: "2"
 services:
   radio:
-    image: easy-radio:latest
+    image: hamishbrown/easy-radio:latest
     restart: unless-stopped
     environment: 
       - TZ=Europe/Dublin
