@@ -4,11 +4,6 @@ Docker image to easily setup an internet radio station using liquidsoap and icec
 - [Liquidsoap 1.4.3](https://www.liquidsoap.info/doc-1.4.3/)
 - [Icecast 2.4.4](https://icecast.org/docs/icecast-2.4.1/)
 
-----------
-Build the image
-```bash
-docker build -t hamishbrown/easy-radio .
-```
 ## Start container
 ### Using **docker-compose**
 Update `docker-compose.xml` with the path to your music folder
@@ -44,4 +39,15 @@ Wait a few seconds depending on the number of tracks in your music folder
 Open your browser at
 ```
 http://localhost:8000/radio
+```
+
+----------
+## Build Your Own
+Clone the repo
+```
+git clone https://github.com/hamishbrown/easy-radio.git
+```
+Build the image
+```bash
+docker build -t hamishbrown/easy-radio ./easy-radio
 ```
