@@ -9,8 +9,8 @@ Build the image
 ```bash
 docker build -t easy-radio .
 ```
-
-## Using **docker-compose**
+## Start container
+### Using **docker-compose**
 Update `docker-compose.xml` with the path to your music folder
 ```
 version: "2"
@@ -29,13 +29,17 @@ services:
       - ./live.liq:/radio/live.liq:rw         # optional: override to use your own script
 
 ```
-
 Start container
 ```
 docker-compose up -d
 ```
-
-## Using **docker**
+### Using **docker**
+Start container
 ```
 docker run -d -p 8000:8000  -e ICECAST_PASS=hackme -v </path/to/music/folder>:/tracks:ro easy-radio:latest
+```
+## Enjoy
+Open your browser at
+```
+http://localhost:8000/radio
 ```
