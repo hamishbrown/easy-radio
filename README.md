@@ -1,7 +1,7 @@
 # easy-radio
 Docker image to easily setup an internet radio station using liquidsoap and icecast
 
-- [Liquidsoap 1.4.3](https://www.liquidsoap.info/doc-1.4.3/)
+- [Liquidsoap 1.4.3](https://www.liquidsoap.info/doc-1.4.3/) *
 - [Icecast 2.4.4](https://icecast.org/docs/icecast-2.4.1/)
 
 ## Start container
@@ -40,6 +40,8 @@ Open your browser at
 ```
 http://localhost:8000/radio
 ```
+### Optional
+Use `radio.subdomain.conf` with [linuxserver/swag](https://hub.docker.com/r/linuxserver/swag)
 
 ----------
 ## Build Your Own
@@ -51,3 +53,5 @@ Build the image
 ```bash
 docker build -t hamishbrown/easy-radio ./easy-radio
 ```
+
+ \* arm32v7 image uses [Liquidsoap 1.4.1](https://www.liquidsoap.info/doc-1.4.1/)
