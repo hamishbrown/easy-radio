@@ -15,14 +15,16 @@ services:
     restart: unless-stopped
     environment: 
       - TZ=Europe/Dublin
-      - ICECAST_PASS=hackme # change in icecast.xml and update here
+      - ICECAST_PASS=hackme                   # RECOMMENDED Change in icecast.xml and update here
     ports:
       - 8000:8000
     volumes:
-      - </path/to/music/folder>:/tracks:ro     # REQUIRED: update with the path to your host music folder
-      - ./icecast.xml:/radio/icecast.xml:rw   # optional: use to override icecast defaults. Recommended to change default password
-      - ./live.liq:/radio/live.liq:rw         # optional: override to use your own script
+      - </path/to/music/folder>:/tracks:ro    # *** REQUIRED*** Update with the path to your host music folder
 
+      # Optional volumes
+      - ./icecast.xml:/radio/icecast.xml:rw   # Optional use to override icecast defaults. Recommended to change default password
+      - ./live.liq:/radio/live.liq:rw         # Optional override to use your own script
+      - ./icecast_logs:/var/log/icecast2:rw    # Optional map icecast logs, set liquidsoap log file in 'live.liq'
 ```
 Start container
 ```
@@ -43,6 +45,9 @@ http://localhost:8000/radio
 ### Optional
 Use `radio.subdomain.conf` with [linuxserver/swag](https://hub.docker.com/r/linuxserver/swag)
 
+## More info
+Icecast, see https://icecast.org/docs/icecast-2.4.1/config-file.html
+Liquidsoap, see https://www.liquidsoap.info/doc-1.4.1/cookbook.html
 ----------
 ## Build Your Own
 Clone the repo
